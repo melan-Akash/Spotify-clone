@@ -47,7 +47,7 @@ const AddAlbum = () => {
       
       <div className="flex flex-col gap-4">
         <p>Upload Image</p>
-        <input onChange={(e) => setImage(e.target.files)} type="file" id="image" accept="image/*" hidden />
+        <input onChange={(e) => setImage(e.target.files[0])} type="file" id="image" accept="image/*" hidden />
         <label htmlFor="image">
           <img className="w-24 cursor-pointer" src={image ? URL.createObjectURL(image) : assets.upload_area} alt="Upload Area" />
         </label>

@@ -78,7 +78,7 @@ const AddSong = () => {
         {/* ගීතය (MP3) Upload කිරීම */}
         <div className="flex flex-col gap-4">
           <p>Upload song</p>
-          <input onChange={(e) => setSong(e.target.files)} type="file" id="song" accept="audio/*" hidden />
+          <input onChange={(e) => setSong(e.target.files[0])} type="file" id="song" accept="audio/*" hidden />
           <label htmlFor="song">
             <img src={song ? assets.upload_added : assets.upload_song} className="w-24 cursor-pointer" alt="Upload Song" />
           </label>
@@ -87,7 +87,7 @@ const AddSong = () => {
         {/* පින්තූරය Upload කිරීම */}
         <div className="flex flex-col gap-4">
           <p>Upload Image</p>
-          <input onChange={(e) => setImage(e.target.files)} type="file" id="image" accept="image/*" hidden />
+          <input onChange={(e) => setImage(e.target.files[0])} type="file" id="image" accept="image/*" hidden />
           <label htmlFor="image">
             <img src={image ? URL.createObjectURL(image) : assets.upload_area} className="w-24 cursor-pointer" alt="Upload Image" />
           </label>
