@@ -19,6 +19,7 @@ const addAlbum = async (req, res) => {
         await album.save();
         res.json({ success: true, message: "Album added" });
     } catch (error) {
+        console.error("Error in addAlbum:", error);
         res.json({ success: false });
     }
 }
@@ -28,6 +29,7 @@ const listAlbum = async (req, res) => {
         const allAlbums = await albumModel.find({});
         res.json({ success: true, albums: allAlbums });
     } catch (error) {
+        console.error("Error in listAlbum:", error);
         res.json({ success: false });
     }
 }
@@ -37,6 +39,7 @@ const removeAlbum = async (req, res) => {
         await albumModel.findByIdAndDelete(req.body.id);
         res.json({ success: true, message: "Album removed" });
     } catch (error) {
+        console.error("Error in removeAlbum:", error);
         res.json({ success: false });
     }
 }
