@@ -18,6 +18,7 @@ const PlayerContextProvider = (props) => {
         currentTime: { second: 0, minute: 0 },
         totalTime: { second: 0, minute: 0 }
     });
+    const [volume, setVolume] = useState(0.5);
 
     const play = () => {
         audioRef.current.play();
@@ -60,6 +61,13 @@ const PlayerContextProvider = (props) => {
         audioRef.current.currentTime = ((e.nativeEvent.offsetX / seekBg.current.offsetWidth) * audioRef.current.duration);
     }
 
+    const changeVolume = (val) => {
+        if (audioRef.current) {
+            audioRef.current.volume = val;
+            setVolume(val);
+        }
+    }
+
     const getSongsData = async () => {
         try {
             const response = await axios.get(`${url}/api/song/list`);
@@ -88,6 +96,7 @@ const PlayerContextProvider = (props) => {
     useEffect(() => {
         setTimeout(() => {
             if (!audioRef.current) return;
+            audioRef.current.volume = volume;
             audioRef.current.ontimeupdate = () => {
                 if (seekBar.current) {
                     seekBar.current.style.width = (Math.floor(audioRef.current.currentTime / audioRef.current.duration * 100)) + "%";
@@ -115,7 +124,8 @@ const PlayerContextProvider = (props) => {
         audioRef, seekBg, seekBar,
         track, setTrack, playStatus, setPlayStatus,
         time, setTime, play, pause, playWithId, previous, next, seekSong,
-        songsData, albumsData
+        songsData, albumsData,
+        volume, changeVolume
     };
 
     return (
