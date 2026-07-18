@@ -18,7 +18,7 @@ const AddAlbum = () => {
     try {
       const formData = new FormData();
       formData.append('name', name);
-      formData.append('description', desc);
+      formData.append('desc', desc);
       formData.append('image', image);
       formData.append('bgColor', color);
 

@@ -23,7 +23,7 @@ const AddSong = () => {
     try {
       const formData = new FormData();
       formData.append('name', name);
-      formData.append('description', description);
+      formData.append('desc', description);
       formData.append('image', image);
       formData.append('audio', song);
       formData.append('album', album);
