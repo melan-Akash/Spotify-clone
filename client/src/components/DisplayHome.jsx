@@ -13,7 +13,7 @@ const DisplayHome = () => {
       <Navbar />
       <div className="mb-4">
         <h1 className="my-5 font-bold text-2xl">Featured Charts</h1>
-        <div className="flex overflow-auto">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
           {albumsData.map((item, index) => (
             <AlbumItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image} />
           ))}
@@ -21,7 +21,7 @@ const DisplayHome = () => {
       </div>
       <div className="mb-4">
         <h1 className="my-5 font-bold text-2xl">Today's biggest hits</h1>
-        <div className="flex overflow-auto">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
           {songsData.map((item, index) => (
             <SongItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image} />
           ))}

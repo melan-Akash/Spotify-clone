@@ -65,7 +65,7 @@ const Display = () => {
   })
 
   return (
-    <div ref={displayRef} className="flex-1 h-full px-6 pt-4 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg text-white overflow-auto">
+    <div ref={displayRef} className="flex-1 h-full p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg text-white overflow-auto">
       {albumsData.length > 0 ? (
         <Routes>
           <Route path="/" element={<DisplayHome />} />

@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div className="h-screen bg-slate-950 animate-gradient p-3 flex flex-col gap-3 overflow-hidden text-white">
-      <div className="h-[88%] flex gap-3 overflow-hidden">
+      <div className="flex-1 flex gap-3 overflow-hidden">
         <Sidebar />
         <Display />
       </div>

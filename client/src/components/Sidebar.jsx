@@ -6,7 +6,7 @@ const Sidebar = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="w-[25%] h-full flex flex-col gap-3 text-white hidden lg:flex">
+    <div className="w-[25%] h-full flex flex-col gap-2 text-white hidden lg:flex">
       {/* Home / Search Container */}
       <div className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg h-[20%] rounded-2xl flex flex-col justify-around p-4">
         <div onClick={() => navigate('/')} className="flex items-center gap-3 pl-4 cursor-pointer hover:text-green-500 transition duration-300">
