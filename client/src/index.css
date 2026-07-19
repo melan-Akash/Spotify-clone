@@ -1,7 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
-
 
 @theme {
   --font-sans: "Outfit", sans-serif;
@@ -9,8 +7,22 @@
   --font-display: "Playfair Display", serif;
 }
 
+body {
+  font-family: "Outfit", sans-serif;
+}
 
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #311042, #020617);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }

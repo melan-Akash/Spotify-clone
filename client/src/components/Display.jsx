@@ -58,14 +58,14 @@ const Display = () => {
 
   useEffect(() => {
     if (isAlbum) {
-      displayRef.current.style.background = `linear-gradient(${bgColor}, #121212)`
+      displayRef.current.style.background = `linear-gradient(${bgColor}33, rgba(18, 18, 18, 0.15))`
     } else {
-      displayRef.current.style.background = `#121212`
+      displayRef.current.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.15))`
     }
   })
 
   return (
-    <div ref={displayRef} className="w-full m-2 px-6 pt-4 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0">
+    <div ref={displayRef} className="flex-1 h-full px-6 pt-4 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg text-white overflow-auto">
       {albumsData.length > 0 ? (
         <Routes>
           <Route path="/" element={<DisplayHome />} />
