@@ -7,7 +7,7 @@ const AlbumItem = ({ image, name, desc, id }) => {
   return (
     <div 
       onClick={() => navigate(`/album/${id}`)} 
-      className="p-3 bg-white/5 border border-white/5 hover:bg-white/10 transition-all duration-300 relative group rounded-lg cursor-pointer flex flex-col items-start"
+      className="p-3 bg-[#181818] hover:bg-[#282828] transition-all duration-300 relative group rounded-lg cursor-pointer flex flex-col items-start"
     >
       <div className="relative w-full aspect-square mb-2.5">
         <img className="rounded-md w-full h-full object-cover" src={image} alt="album" />

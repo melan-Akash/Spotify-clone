@@ -6,7 +6,7 @@ const Player = () => {
   const { track, seekBar, seekBg, playStatus, play, pause, time, previous, next, seekSong, volume, changeVolume } = useContext(PlayerContext)
 
   return (
-    <div className="w-full h-20 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-lg flex justify-between items-center text-white px-6">
+    <div className="w-full h-20 bg-[#121212] border-t border-white/5 shadow-2xl flex justify-between items-center text-white px-6">
       {track && track.desc ? (
         <div className="hidden lg:flex items-center gap-4">
           <img className="w-12 h-12 rounded-md object-cover" src={track.image} alt="song" />
@@ -14,6 +14,15 @@ const Player = () => {
             <p className="font-semibold text-sm text-white">{track.name}</p>
             <p className="text-xs text-[#b3b3b3]">{track.desc.slice(0, 24)}</p>
           </div>
+          {/* Animated Equalizer Bouncing Sound Wave */}
+          {playStatus && (
+            <div className="flex gap-[3px] items-end h-3.5 w-4 ml-1">
+              <span className="w-[3px] bg-[#1db954] rounded-full animate-bounce-bar-1 h-3"></span>
+              <span className="w-[3px] bg-[#1db954] rounded-full animate-bounce-bar-2 h-2"></span>
+              <span className="w-[3px] bg-[#1db954] rounded-full animate-bounce-bar-3 h-3.5"></span>
+              <span className="w-[3px] bg-[#1db954] rounded-full animate-bounce-bar-4 h-1.5"></span>
+            </div>
+          )}
         </div>
       ) : (
         <div className="hidden lg:flex items-center gap-4">

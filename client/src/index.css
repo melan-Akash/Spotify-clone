@@ -9,18 +9,11 @@
 
 body {
   font-family: "Outfit", sans-serif;
+  background-color: #080808;
 }
 
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background: linear-gradient(-45deg, #020617, #0f172a, #1e1b4b, #311042, #020617);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+.spotify-dark-bg {
+  background-color: #080808;
 }
 
 /* Custom Volume Slider styling */
@@ -71,6 +64,29 @@ body {
 .volume-slider:hover::-moz-range-thumb {
   opacity: 1;
 }
+
+/* Bouncing Equalizer Bars */
+@keyframes bounceBar1 {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; }
+}
+@keyframes bounceBar2 {
+  0%, 100% { height: 12px; }
+  50% { height: 6px; }
+}
+@keyframes bounceBar3 {
+  0%, 100% { height: 6px; }
+  50% { height: 14px; }
+}
+@keyframes bounceBar4 {
+  0%, 100% { height: 10px; }
+  50% { height: 4px; }
+}
+
+.animate-bounce-bar-1 { animation: bounceBar1 1.2s infinite ease-in-out; }
+.animate-bounce-bar-2 { animation: bounceBar2 0.8s infinite ease-in-out; }
+.animate-bounce-bar-3 { animation: bounceBar3 1.0s infinite ease-in-out; }
+.animate-bounce-bar-4 { animation: bounceBar4 1.1s infinite ease-in-out; }
 
 ::-webkit-scrollbar {
   display: none;

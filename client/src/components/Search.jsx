@@ -21,13 +21,13 @@ const Search = () => {
   return (
     <>
       <Navbar />
-      <div className="my-6">
+      <div className="mt-2 mb-6">
         <input 
           type="text" 
           placeholder="What do you want to listen to?" 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full max-w-md bg-[#242424] text-white px-5 py-3.5 rounded-full outline-none focus:ring-2 focus:ring-green-800 text-sm"
+          className="w-full max-w-md bg-[#292929] text-white px-5 py-3 rounded-full outline-none focus:bg-[#333] transition-all text-sm"
         />
       </div>
 
