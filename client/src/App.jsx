@@ -8,7 +8,7 @@ const App = () => {
   const { audioRef, track } = useContext(PlayerContext)
 
   return (
-    <div className="h-screen bg-[#080808] p-3 flex flex-col gap-3 overflow-hidden text-white">
+    <div className="h-screen spotify-green-gradient p-3 flex flex-col gap-3 overflow-hidden text-white">
       <div className="flex-1 flex gap-3 overflow-hidden">
         <Sidebar />
         <Display />

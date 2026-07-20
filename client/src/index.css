@@ -9,11 +9,11 @@
 
 body {
   font-family: "Outfit", sans-serif;
-  background-color: #080808;
+  background-color: #000000;
 }
 
-.spotify-dark-bg {
-  background-color: #080808;
+.spotify-green-gradient {
+  background: linear-gradient(180deg, #072413 0%, #030e08 60%, #000000 100%);
 }
 
 /* Custom Volume Slider styling */

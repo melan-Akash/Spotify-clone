@@ -21,13 +21,14 @@ const Search = () => {
   return (
     <>
       <Navbar />
+      {/* Frosted Glass Search Input */}
       <div className="mt-2 mb-6">
         <input 
           type="text" 
           placeholder="What do you want to listen to?" 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full max-w-md bg-[#292929] text-white px-5 py-3 rounded-full outline-none focus:bg-[#333] transition-all text-sm"
+          className="w-full max-w-md bg-white/5 border border-white/10 text-white px-5 py-3 rounded-full outline-none focus:bg-white/10 transition-all text-sm placeholder-gray-400"
         />
       </div>
 
@@ -35,8 +36,8 @@ const Search = () => {
         <div className="flex flex-col gap-8">
           {filteredSongs.length > 0 && (
             <div>
-              <h2 className="font-bold text-2xl mb-4">Songs</h2>
-              <div className="flex overflow-auto">
+              <h2 className="font-bold text-2xl mb-4 text-left">Songs</h2>
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
                 {filteredSongs.map((item, index) => (
                   <SongItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image} />
                 ))}
@@ -46,8 +47,8 @@ const Search = () => {
 
           {filteredAlbums.length > 0 && (
             <div>
-              <h2 className="font-bold text-2xl mb-4">Albums</h2>
-              <div className="flex overflow-auto">
+              <h2 className="font-bold text-2xl mb-4 text-left">Albums</h2>
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
                 {filteredAlbums.map((item, index) => (
                   <AlbumItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image} />
                 ))}
@@ -62,9 +63,9 @@ const Search = () => {
       )}
 
       {!query && (
-        <div>
-          <h2 className="font-bold text-2xl mb-4">Browse All Albums</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="mt-2">
+          <h2 className="font-bold text-2xl mb-4 text-left">Browse All Albums</h2>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
             {albumsData.map((item, index) => (
               <AlbumItem key={index} name={item.name} desc={item.desc} id={item._id} image={item.image} />
             ))}
