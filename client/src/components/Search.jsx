@@ -28,7 +28,7 @@ const Search = () => {
           placeholder="What do you want to listen to?" 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full max-w-md bg-white/5 border border-white/10 text-white px-5 py-3 rounded-full outline-none focus:bg-white/10 transition-all text-sm placeholder-gray-400"
+          className="w-full max-w-md search-input border border-white/10 text-white px-5 py-3 rounded-full outline-none transition-all text-sm placeholder:text-gray-400"
         />
       </div>
 

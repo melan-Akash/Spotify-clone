@@ -91,3 +91,11 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* Custom search input class to avoid Tailwind linter false-positives */
+.search-input {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.search-input:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
